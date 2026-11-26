@@ -28,3 +28,7 @@ Telefone, endereço e avaliação (5,0; 156 avaliações) conferidos no Google M
 - Campos com validação nativa, foco visível e navegação por teclado.
 
 O formulário não armazena informações. O mapa carrega conteúdo do Google; os links de contato abrem os serviços correspondentes. A fonte Manrope é carregada do Google Fonts, com fonte local de reserva.
+
+## Visual e temas
+
+Abertura com imagem publicitária ilustrativa gerada por IA, inspirada no uniforme fornecido pelo cliente. O portfólio continua usando fotos reais dos serviços. Tema escuro padrão com alternância para tema claro; preferência salva localmente. Logo branca e verde refeita para o fundo escuro. Lema e foto do escritório fornecidos pelo cliente.

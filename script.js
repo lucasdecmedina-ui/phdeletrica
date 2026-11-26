@@ -27,3 +27,8 @@ document.querySelector('.lightbox-close').addEventListener('click',()=>lightbox.
 lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close();});
 lightbox.addEventListener('close',()=>{document.body.classList.remove('modal-open');if(photoTrigger)photoTrigger.focus({preventScroll:true});});
 document.querySelector('#year').textContent=String(new Date().getFullYear());
+
+const themeButton=document.querySelector('.theme-toggle');
+function syncThemeButton(){const dark=document.documentElement.dataset.theme==='dark';themeButton.setAttribute('aria-label',dark?'Ativar modo claro':'Ativar modo escuro');themeButton.title=dark?'Ativar modo claro':'Ativar modo escuro';document.querySelector('meta[name="theme-color"]').content=dark?'#111a1e':'#f7faf8';}
+themeButton.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('phd-theme',next);}catch(e){}syncThemeButton();});
+syncThemeButton();
