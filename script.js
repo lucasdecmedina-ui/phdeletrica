@@ -9,7 +9,7 @@ document.addEventListener('click',event=>{if(!event.target.closest('.header'))cl
 matchMedia('(min-width:651px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
 const header=document.querySelector('.header');
 let scrollScheduled=false;
-function updateHeader(){header.classList.toggle('scrolled',window.scrollY>15);scrollScheduled=false;}
+function updateHeader(){header.classList.toggle('scrolled',window.scrollY>15);if(window.scrollY<100)menu.querySelectorAll('a').forEach(a=>a.classList.remove('active'));scrollScheduled=false;}
 window.addEventListener('scroll',()=>{if(!scrollScheduled){scrollScheduled=true;requestAnimationFrame(updateHeader);}},{passive:true});updateHeader();
 if('IntersectionObserver' in window){
   const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
