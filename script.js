@@ -18,7 +18,7 @@ if('IntersectionObserver' in window){
 }
 document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{document.querySelector('#service').value=link.dataset.service;}));
 const budgetForm=document.querySelector('#budget-form');
-budgetForm.addEventListener('submit',event=>{event.preventDefault();if(!budgetForm.reportValidity())return;const data=new FormData(budgetForm);const message=['Ol�, PHD El�trica! Gostaria de solicitar um or�amento.','',`Nome: ${String(data.get('name')).trim()}`,`Servi�o: ${data.get('service')}`,`Bairro e cidade: ${String(data.get('neighborhood')).trim()}`,String(data.get('details')).trim()?`Detalhes: ${String(data.get('details')).trim()}`:''].filter((line,index)=>line||index===1).join('\n');window.location.assign('https://wa.me/5511994781399?text='+encodeURIComponent(message));});
+budgetForm.addEventListener('submit',event=>{event.preventDefault();if(!budgetForm.reportValidity())return;const data=new FormData(budgetForm);const message=['Olá, PHD Elétrica! Gostaria de solicitar um orçamento.','',`Nome: ${String(data.get('name')).trim()}`,`Serviço: ${data.get('service')}`,`Bairro e cidade: ${String(data.get('neighborhood')).trim()}`,String(data.get('details')).trim()?`Detalhes: ${String(data.get('details')).trim()}`:''].filter((line,index)=>line||index===1).join('\n');window.location.assign('https://wa.me/5511994781399?text='+encodeURIComponent(message));});
 const lightbox=document.querySelector('.lightbox');
 const lightboxImage=document.querySelector('#lightbox-image');
 let photoTrigger=null;
@@ -27,4 +27,3 @@ document.querySelector('.lightbox-close').addEventListener('click',()=>lightbox.
 lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close();});
 lightbox.addEventListener('close',()=>{document.body.classList.remove('modal-open');if(photoTrigger)photoTrigger.focus({preventScroll:true});});
 document.querySelector('#year').textContent=String(new Date().getFullYear());
-
